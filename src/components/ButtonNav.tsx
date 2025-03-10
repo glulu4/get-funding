@@ -19,7 +19,7 @@ export default function ButtonNav({goBack, goNext}: ButtonNavProps) {
 
 
     return (
-        <div className="flex flex-col gap-5 justify-between items-center mt-6 pt-10 w-full max-w-lg mx-auto">
+        <div className="flex flex-row gap-5 justify-between items-center mt-6 pt-10 w-full max-w-lg mx-auto">
             {/* Back Button */}
             <button
                 onClick={goBack}
