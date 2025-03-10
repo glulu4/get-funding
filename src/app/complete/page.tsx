@@ -4,14 +4,15 @@ import React, {useEffect} from 'react'
 import Confetti from 'react-confetti-boom';
 
 
-export default function page() {
+export default function Page() {
 
 
   const {dispatch} = useForm();
+
+
   useEffect(() => {
     dispatch({type: "CLEAR_STATE"})
-
-  }, [])
+  }, [dispatch])
   return (
     <div className=" mx-auto px-5 min-h-screen">
       <Confetti mode="boom" particleCount={500} colors={['#ff577f', '#ff884b', "#FFFF00"]} />
