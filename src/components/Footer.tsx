@@ -8,12 +8,12 @@ import { Button } from "./ui/button";
 
 export const Footer: FunctionComponent = () => {
   return (
-    <section className="mt-8 md:mt-16 mb-12">
+    <section className="mt-8 md:mt-16 bg-primaryGreenDark text-white p-4 lg:p-8">
       <div className="flex items-center justify-between">
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm">
           © {config.name.copyright} {new Date().getFullYear()}
         </div>
-        <div className="text-xs text-muted-foreground hidden lg:block">
+        <div className="text-xs hidden lg:block">
           <Link
             href={`${config.baseUrl}`}
           >
@@ -26,10 +26,9 @@ export const Footer: FunctionComponent = () => {
               <Rss className="w-4 h-4" />
             </Button>
           </Link>
-          <DarkModeToggle />
         </div>
       </div>
-      <div className="text-xs text-muted-foreground lg:hidden">
+      <div className="text-xs lg:hidden">
         <Link
           href={`${config.baseUrl}`}
         >

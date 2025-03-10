@@ -74,6 +74,7 @@ import Industry from "./steps/Industry";
 import Zipcode from "./steps/Zipcode";
 import BusinessName from "./steps/BusinessName";
 import Contact from "./steps/Contact";
+import FormProgress from "./FormProgress";
 
 const steps = [BusinessType, Money, Purpose,
      BusinessStart, Revenue, CreditScore, Industry, Zipcode, BusinessName, Contact];
@@ -127,6 +128,8 @@ export default function MultiStepForm() {
 
     return (
         <div className="relative w-5/6 mx-auto">
+            <FormProgress />
+
             <AnimatePresence mode="wait">
                 <motion.div
                     key={state.stepIndex} // This triggers animation when step changes

@@ -66,7 +66,6 @@ export default function RootLayout({
           <FormProvider>
             <main>
               <Header />
-              <FormProgress />
 
               {children}
               <Footer />

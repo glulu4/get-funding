@@ -49,9 +49,9 @@ export default function FormProgress() {
                 return (
                     <div key={barIndex} className="flex flex-col items-center justify-center w-full mb-4">
                         {/* Labels Above the Bar */}
-                        <div className="flex flex-row justify-center w-full mb-2">
+                        <div className="hidden sm:flex flex-row justify-center w-full mb-2">
                             <span className="text-sm font-semibold text-gray-700 text-center">
-                                {MOBILE_TITLES[barIndex] || "Step Group"}
+                                {MOBILE_TITLES[barIndex]}
                             </span>
                         </div>
 
@@ -59,7 +59,7 @@ export default function FormProgress() {
                         <div
                             className={clsx(
                                 "h-1 rounded-full transition-all duration-300",
-                                isCompleted ? "bg-green-500" : isActive ? "bg-green-300" : "bg-gray-400"
+                                isCompleted ? "bg-primaryGreenLight" : isActive ? "bg-green-300" : "bg-gray-400"
                             )}
                             style={{width: barWidth}}
                         />

@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
-import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import NumberInput from '../NumberInput';
 
@@ -10,10 +8,21 @@ export default function Zipcode({nextFn, backFn}: StepProps) {
 
 
     const [zipCode, setZipCode] = useState("");
+    const [errorOccured, setErrorOccured] = useState(false)
+    const [hasTyped, setHasTyped] = useState(false); // Track if user has started typing
 
-    const handleNext = (option: string) => {
+    const handleNext = () => {
+
+        if (zipCode.length !== 5) {
+            // alert("Please enter a valid zip code")
+            setErrorOccured(true);
+            setHasTyped(false);
+            return
+        }
         nextFn();
     }
+
+
 
     const handleBack = () => {
         backFn()
@@ -21,15 +30,19 @@ export default function Zipcode({nextFn, backFn}: StepProps) {
 
     return (
         <Question
+            
             question="What is your Zip Code?"
             formInput={
                 <NumberInput
+                    hasTyped={hasTyped}
+                    setHasTyped={setHasTyped}
+                    errorOccured={errorOccured}
                     label="Zip Code"
                     value={zipCode}
                     setValue={setZipCode}
                     />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

@@ -3,6 +3,7 @@ import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
+import GroupSelect from '../GroupSelect';
 
 // STEP 1
 export default function BusinessStart({nextFn, backFn}: StepProps) {
@@ -29,7 +30,7 @@ export default function BusinessStart({nextFn, backFn}: StepProps) {
         <Question
             question="When did you start your business?"
             formInput={
-                <RadioSelect
+                <GroupSelect
                     options={options}
                     selected={selected}
                     setSelected={setSelected}

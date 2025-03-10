@@ -10,8 +10,16 @@ export default function Revenue({nextFn, backFn}: StepProps) {
 
 
     const [annualRevenue, setAnnualRevenue] = useState("");
+    const [errorOccured, setErrorOccured] = useState(false)
+    const [hasTyped, setHasTyped] = useState(false); // Track if user has started typing
+    
 
-    const handleNext = (option: string) => {
+    const handleNext = () => {
+        if (!annualRevenue || parseInt(annualRevenue) <= 0) {
+            setErrorOccured(true);
+            setHasTyped(false);
+            return
+        }
         nextFn();
     }
 
@@ -21,16 +29,19 @@ export default function Revenue({nextFn, backFn}: StepProps) {
 
     return (
         <Question
-            question="When did you start your business?"
+            question="What is your annual revenue?"
             formInput={
                 <NumberInput
+                    hasTyped={hasTyped}
+                    setHasTyped={setHasTyped}
+                    errorOccured={errorOccured}
                     label="Annual Revenue"
                     prefix='$'
                     value={annualRevenue}
                     setValue={setAnnualRevenue}
                     />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

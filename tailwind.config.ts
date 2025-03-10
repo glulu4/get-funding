@@ -1,3 +1,4 @@
+import {error} from "console";
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
@@ -24,6 +25,7 @@ const config = {
         primaryGreen:"#086454",
         primaryGreenDark:"#20443c",
         primaryGreenLight:"#84bc5c",
+        errorRed:"#CD1C18",
 
 
 
