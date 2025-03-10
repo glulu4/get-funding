@@ -4,6 +4,7 @@ import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import GroupSelect from '../GroupSelect';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function BusinessStart({nextFn, backFn}: StepProps) {
@@ -18,7 +19,13 @@ export default function BusinessStart({nextFn, backFn}: StepProps) {
 
     const [selected, setSelected] = useState(options[0]);
 
-    const handleNext = (option:string) => {
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "businessAge",
+            value: selected,
+        });
         nextFn();
     }
 
@@ -36,7 +43,7 @@ export default function BusinessStart({nextFn, backFn}: StepProps) {
                     setSelected={setSelected}
                 />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

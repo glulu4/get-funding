@@ -23,10 +23,24 @@ export default function NumberInput({label, value, setValue, prefix, errorOccure
         const formattedValue = e.target.value.replace(/[^0-9,]/g, "");
         setValue(formattedValue);
     };
+
+    const formatNumber = (num: string) => {
+
+        if (label === "Annual Revenue") {
+            const nfObject = new Intl.NumberFormat("en-US");
+            // Convert to number, handle empty string as 0
+            const numericValue = num === "" ? 0 : Number(num.replace(/,/g, ""));
+            return nfObject.format(numericValue).toString();
+
+        }
+    };
     
     
     const showError = errorOccured && !hasTyped;    
 
+
+    console.log("showError", showError);
+    
     return (
         <div className="flex flex-col w-full">
             {/* Label */}
@@ -37,7 +51,7 @@ export default function NumberInput({label, value, setValue, prefix, errorOccure
             {/* Input Wrapper */}
             <div className={clsx(
                 "relative flex items-center border border-gray-300 rounded-lg px-4 py-3 bg-white focus-within:ring-2 focus-within:ring-primaryGreenLight",
-                (showError) && "border-[#CD1C18] border-2"
+                (showError) && "border-2 border-red-800"
                 )}>
                 {/* Prefix Symbol (e.g., "$") */}
                 {prefix && <span className="text-lg font-medium text-gray-500 mr-2">{prefix}</span>}
@@ -47,7 +61,7 @@ export default function NumberInput({label, value, setValue, prefix, errorOccure
                 required
                 onFocus={() => setHasTyped(true)}
                     type="text"
-                    value={value}
+                    value={formatNumber(value)}
                     onChange={handleChange}
                     placeholder="0"
                     className={clsx(

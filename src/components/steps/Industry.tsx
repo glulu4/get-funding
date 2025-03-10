@@ -1,10 +1,9 @@
 'use client'
 import React, {useState} from 'react';
-import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
-import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import Dropdown from '../Dropdown';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function Industry({nextFn, backFn}: StepProps) {
@@ -33,7 +32,13 @@ export default function Industry({nextFn, backFn}: StepProps) {
 
     const [selected, setSelected] = useState(options[4]);
 
-    const handleNext = (option:string) => {
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "industry",
+            value: selected,
+        });
         nextFn();
     }
 
@@ -52,7 +57,7 @@ export default function Industry({nextFn, backFn}: StepProps) {
                 />
 
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

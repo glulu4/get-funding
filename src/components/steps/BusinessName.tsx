@@ -5,6 +5,7 @@ import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import NumberInput from '../NumberInput';
 import TextInput from '../TextInput';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function BusinessName({nextFn, backFn}: StepProps) {
@@ -12,10 +13,15 @@ export default function BusinessName({nextFn, backFn}: StepProps) {
 
     const [name, setName] = useState("");
 
-    const handleNext = (option: string) => {
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "businessName",
+            value: name,
+        });
         nextFn();
     }
-
     const handleBack = () => {
         backFn()
     }
@@ -31,7 +37,7 @@ export default function BusinessName({nextFn, backFn}: StepProps) {
                     setValue={setName}
                     />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

@@ -19,8 +19,8 @@ interface MenuItem {
   openInNewTab?: boolean;
 }
 const menuItems: MenuItem[] = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  // { name: "Home", href: "/" },
+  // { name: "About", href: "/about" },
 ];
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();

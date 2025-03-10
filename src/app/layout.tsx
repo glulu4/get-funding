@@ -8,7 +8,6 @@ import "./globals.css";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import Providers from "@/components/theme-provider";
-import FormProgress from "@/components/FormProgress";
 import FormProvider from "@/context/form-context";
 // const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -24,24 +23,6 @@ const fontSans = Mulish({
     variable: "--font-serif",
   })
 
-
-// export const metadata: Metadata = {
-//   title: {
-//     absolute: config.name.metadata.title.absolute,
-//     default: config.name.metadata.title.default,
-//     template: config.name.metadata.title.template,
-//   },
-//   description: config.name.metadata.description,
-//   openGraph: {
-//     title: config.name.metadata.title.default,
-//     description: config.name.metadata.description,
-//     // images: [
-//     //   signOgImageUrl({
-//     //     title: config.name.name,
-//     //   }),
-//     // ]
-//   }
-// };
 
 export default function RootLayout({
   children,

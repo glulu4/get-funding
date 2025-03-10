@@ -36,7 +36,7 @@ export default function ButtonNav({goBack, goNext}: ButtonNavProps) {
             {/* Next Button */}
             {isLastStep ? (
                 <button
-                    onClick={() => router.push('/complete')}
+                    onClick={goNext}
                     className="w-2/4 px-8 py-4 rounded-lg text-lg font-semibold text-white bg-primaryGreenLight hover:bg-primaryGreenDark transition-all duration-300"
                 >
                     Complete

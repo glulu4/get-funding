@@ -4,6 +4,7 @@ import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import GroupSelect from '../GroupSelect';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function Money({nextFn, backFn}: StepProps) {
@@ -13,13 +14,18 @@ export default function Money({nextFn, backFn}: StepProps) {
   const options = [
     "$10,000", "$20,000", "$50,000",
     "$100,000", "$250,000", "$500,000",
-    "$1,000,000", "$2,000,000", "$3,000,000"
+    "$1,000,000", "$2,000,000", "$3,000,000+"
   ];
 
-  const handleNext = () => {
-    // setSelectedAmount(amount);
-    nextFn();
-  }
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "moneyNeeded",
+            value: selectedAmount,
+        });
+        nextFn();
+    }
 
   const handleBack = () => {
     backFn()

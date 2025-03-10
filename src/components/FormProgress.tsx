@@ -15,8 +15,10 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 
 import {STEPS, MOBILE_TITLES} from "@/constants/steps";
 import {useForm} from "@/context/form-context";
+import {useMounted} from "@/hooks/useMounted";
 
 export default function FormProgress() {
+
     const {state} = useForm();
     const {stepIndex} = state;
 

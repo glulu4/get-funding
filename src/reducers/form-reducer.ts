@@ -15,8 +15,6 @@ export type FormState = {
     lastName: string;
     email: string;
     phone: string;
-
-
     stepIndex: number;
 
 }
@@ -48,6 +46,7 @@ export const initialFormState: FormState = {
 export type FormActions =
     | {type: 'CLEAR_STATE';}
     | {type: 'UPDATE_FIELD'; field: keyof FormState; value: string}
+    | {type: 'SET_CONTACT_INFO'; contactInfo: {firstName: string; lastName: string; email: string; phone: string}}
     | {type: 'INCREASE_STEP';}
     | {type: 'DECREASE_STEP';}
 
@@ -65,6 +64,15 @@ export function formReducer(state: FormState, action: FormActions): FormState {
             return {
                 ...state,
                 stepIndex: state.stepIndex + 1,
+            };
+
+        case "SET_CONTACT_INFO":
+            return {
+                ...state,
+                firstName: action.contactInfo.firstName,
+                lastName: action.contactInfo.lastName,
+                email: action.contactInfo.email,
+                phone: action.contactInfo.phone,
             };
         
         case "DECREASE_STEP":

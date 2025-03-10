@@ -3,6 +3,7 @@ import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function CreditScore({nextFn, backFn}: StepProps) {
@@ -14,7 +15,13 @@ export default function CreditScore({nextFn, backFn}: StepProps) {
     ];
     const [selected, setSelected] = useState(options[0]);
 
-    const handleNext = (option:string) => {
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "creditScore",
+            value: selected,
+        });
         nextFn();
     }
 
@@ -32,7 +39,7 @@ export default function CreditScore({nextFn, backFn}: StepProps) {
                     setSelected={setSelected}
                 />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

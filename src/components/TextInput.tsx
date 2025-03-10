@@ -11,6 +11,7 @@ interface TextInputProps {
     type?: "text" | "email" | "tel"; // Supports text, email, and phone
     placeholder?: string;
     icon?: React.ReactNode; // Optional icon (e.g., email or phone icon)
+    required?: boolean;
 }
 
 export default function TextInput({label, value, setValue, type = "text", placeholder, icon}: TextInputProps) {
@@ -26,6 +27,7 @@ export default function TextInput({label, value, setValue, type = "text", placeh
 
                 {/* Input Field */}
                 <input
+                    required
                     type={type}
                     value={value}
                     onChange={(e) => setValue(e.target.value)}

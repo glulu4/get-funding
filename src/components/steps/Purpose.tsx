@@ -4,6 +4,7 @@ import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
 import Dropdown from '../Dropdown';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function Purpose({nextFn, backFn}: StepProps) {
@@ -22,7 +23,13 @@ export default function Purpose({nextFn, backFn}: StepProps) {
     ];
     const [selected, setSelected] = useState(options[0]);
 
-    const handleNext = (option:string) => {
+    const {dispatch} = useForm();
+    const handleNext = () => {
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "purpose",
+            value: selected,
+        });
         nextFn();
     }
 
@@ -41,7 +48,7 @@ export default function Purpose({nextFn, backFn}: StepProps) {
                 />
 
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );

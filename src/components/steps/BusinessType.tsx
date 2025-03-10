@@ -3,9 +3,13 @@ import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
 import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
+import {useForm} from '@/context/form-context';
 
 // STEP 1
 export default function BusinessType({nextFn, backFn}: StepProps) {
+
+    const {state, dispatch} = useForm();
+
     const options = [
         'Sole Proprietorship',
         'Partnership',
@@ -15,7 +19,13 @@ export default function BusinessType({nextFn, backFn}: StepProps) {
     ];
     const [selected, setSelected] = useState(options[0]);
 
-    const handleNext = (option:string) => {
+    const handleNext = () => {
+
+        dispatch({
+            type: "UPDATE_FIELD",
+            field: "businessType",
+            value: selected,
+        });
         nextFn();
     }
 
@@ -33,7 +43,7 @@ export default function BusinessType({nextFn, backFn}: StepProps) {
                     setSelected={setSelected}
                 />
             }
-            nextFn={nextFn}
+            nextFn={handleNext}
             backFn={handleBack}
         />
     );
