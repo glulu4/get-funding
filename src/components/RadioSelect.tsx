@@ -27,7 +27,7 @@ export default function RadioSelect({
                         value={plan}
                         aria-label={plan}
                         className={clsx(
-                            "sm:h-20 group relative block cursor-pointer rounded-lg border border-gray-300 bg-white px-6 py-4 shadow-sm focus:outline-none data-[focus]:border-indigo-600 data-[focus]:ring-2 data-[focus]:ring-indigo-600 sm:flex sm:justify-between transition duration-300 ease-in-out",
+                            "sm:h-20 group relative block cursor-pointer rounded-lg border border-gray-300 bg-white px-6 py-4 shadow-sm focus:outline-none  data-[focus]:ring-2  sm:flex sm:justify-between transition duration-300 ease-in-out",
                             selected === plan && "ring-2 ring-primaryGreenLight transform scale-105"
                         )}
                     >
