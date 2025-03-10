@@ -1,7 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { config } from "@/config";
-import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
 
 const content = `# About Me
@@ -26,23 +25,7 @@ Love,
 
 Samantha`;
 
-export async function generateMetadata() {
-  return {
-    title: "About Me",
-    description: "Learn more about Samantha and her travel adventures",
-    openGraph: {
-      title: "About Me",
-      description: "Learn more about Samantha and her travel adventures",
-      images: [
-        signOgImageUrl({
-          title: "Samantha",
-          label: "About Me",
-          brand: config.name.name,
-        }),
-      ],
-    },
-  };
-}
+
 
 const Page = async () => {
   return (

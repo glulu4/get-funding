@@ -20,10 +20,17 @@ const config = {
     },
     extend: {
       colors: {
+
+        primaryGreen:"#086454",
+        primaryGreenDark:"#20443c",
+        primaryGreenLight:"#84bc5c",
+
+
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: "#f6f6f2",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -75,6 +82,7 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        serif: ["var(--font-serif)", ...fontFamily.serif],
       },
     },
   },

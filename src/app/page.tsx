@@ -1,17 +1,17 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import MultiStepForm from "@/components/MuliStep";
+import RadioSelect from "@/components/RadioSelect";
 
-const Page = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
+const Page = () => {
   return (
-    <div className="container mx-auto px-5 mb-10">
+    <div className=" mx-auto px-5">
       <div>
-        <h1>
-          yo
-        </h1>
+
+
+        <MultiStepForm/>
+
+        {/* <RadioSelect/> */}
       </div>
 
     </div>
