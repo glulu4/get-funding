@@ -22,6 +22,7 @@ const fontSans = Mulish({
 
 
 export const metadata = {
+  metadataBase: new URL("https://www.gettfunded.com"),
   title: "Gett Funded | Fast Business & Startup Loans with Quick Approval",
   description: "Get access to funding with Gett Funded. Apply for business loans, startup financing, personal funding, and more. Fast approval, flexible repayment, and competitive rates.",
   keywords: "business funding, startup loans, personal financing, small business loans, fast approval loans, venture capital, angel investors, SBA loans, funding for new businesses, easy business loans, no credit check business loans, flexible repayment loans",
@@ -32,7 +33,7 @@ export const metadata = {
     siteName: "Gett Funded",
     images: [
       {
-        url: "https://www.gettfunded.com/opengraph-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Gett Funded - Secure Business & Startup Loans",
@@ -45,11 +46,9 @@ export const metadata = {
     card: "summary_large_image",
     title: "Gett Funded | Business & Personal Loans with Fast Approval",
     description: "Need funding? Gett Funded offers quick approval business and startup loans with flexible terms. Apply today!",
-    images: ["https://www.gettfunded.com/opengraph-image.png"],
+    images: ["/opengraph-image.png"],
   },
-  alternates: {
-    canonical: "https://www.gettfunded.com",
-  },
+
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
