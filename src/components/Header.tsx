@@ -6,7 +6,6 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { config } from "@/config";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Image from "next/image";
