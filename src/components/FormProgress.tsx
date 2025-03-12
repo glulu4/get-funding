@@ -15,7 +15,6 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 
 import {STEPS, MOBILE_TITLES} from "@/constants/steps";
 import {useForm} from "@/context/form-context";
-import {useMounted} from "@/hooks/useMounted";
 
 export default function FormProgress() {
 
@@ -43,7 +42,7 @@ export default function FormProgress() {
     const barWidth = `${Math.max(8, containerWidth / barChunks.length - 20)}px`;
 
     return (
-        <div id="progress-container" className="flex flex-row items-center w-5/6 justify-center mx-auto p-2">
+        <div id="progress-container" className="flex flex-row items-center justify-center mx-auto p-2">
             {barChunks.map((chunk, barIndex) => {
                 const isCompleted = barIndex < currentChunkIndex;
                 const isActive = barIndex === currentChunkIndex;

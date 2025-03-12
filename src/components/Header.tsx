@@ -13,36 +13,52 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+import MyButton from "./ui/MyButton";
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
 const menuItems: MenuItem[] = [
-  // { name: "Home", href: "/" },
+  { name: "Home", href: "/" },
   // { name: "About", href: "/about" },
+  { name: "Apply Now", href: "" },
 ];
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
 
+
+
   return (
     <nav>
       <div className="hidden md:flex items-center">
-        {menuItems.map((item) => (
+        {menuItems.map((item, index) => (
           <div key={item.href} className="ml-4 md:ml-8">
             <a
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900",
-                pathname === item.href && "font-semibold"
+                "hover:text-primaryGreen text-primaryGreenDark font-semibold text-xl",
+                pathname === item.href && "font-bold",
               )}
             >
-              {item.name}
+              {item.name === "Apply Now" ? (
+                <MyButton
+                  key={`${index}-${item.href}`}
+                arrow
+                  text="Apply Now"
+                  href="/apply"
+                />
+              ) :
+                item.name
+              }
+
             </a>
           </div>
         ))}
       </div>
+
+      {/* Mobile */}
       <div className="md:hidden">
         <Sheet>
           <SheetTrigger>
@@ -75,14 +91,15 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <section className=" flex items-center justify-between px-4 sm:px-6 md:px-10">
+    <section className=" flex items-center justify-between px-4 sm:px-6 md:px-10 bg-white shadow-md">
+      <meta name="theme-color" content="#fff" />
       <Link href="/">
 
         <Image
           src="/images/icon.png"
           alt="Roofing Icon"
           objectFit="contain"
-          width={150}
+          width={100}
           height={75}
         // className="object-contain"
         />

@@ -1,6 +1,4 @@
 "use client"
-
-import { config } from "@/config";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inria_Serif, Inter, Mulish } from "next/font/google";
