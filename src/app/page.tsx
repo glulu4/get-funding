@@ -7,7 +7,7 @@ import Head from "next/head";
 const Page = () => {
   // w-5/6
   return (
-    <div className="mx-auto min-h-screen ">
+    <>
       <Head>
         <title>Gett Funded | Fast & Flexible Funding Solutions</title>
         <meta name="description" content="Gett Funded provides quick access to funding solutions for businesses and individuals. Apply today and secure the financial support you need." />
@@ -88,28 +88,34 @@ const Page = () => {
     })}
   </script>
       </Head>
-      <div className="space-y-16">
+    
+      <div className="mx-auto min-h-screen ">
+
+        <div className="space-y-16">
 
 
-      <div className="bg-primaryGreenDark rounded-b-3xl">
-          <Hero />
-      </div>
+          <div className="bg-primaryGreenDark rounded-b-3xl">
+            <Hero />
+          </div>
 
-      <div className="w-5/6 mx-auto space-y-10">
-          <Row1 />
-      </div>
+          <div className="w-5/6 mx-auto space-y-10">
+            <Row1 />
+          </div>
 
-        <div className="w-5/6 mx-auto space-y-10 bg-white rounded-xl">
-          <Features />
+          <div className="w-5/6 mx-auto space-y-10 bg-white rounded-xl">
+            <Features />
+          </div>
+
+          <div className="py-10">
+            <TrustedBy />
+          </div>
+
         </div>
 
-      <div className="py-10">
-        <TrustedBy/>
       </div>
+    
+    </>
 
-      </div>
-
-    </div>
   );
 };
 
