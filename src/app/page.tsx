@@ -4,6 +4,14 @@ import TrustedBy from "@/components/landing/TrustedBy";
 import Row1 from "@/components/Row1";
 import Head from "next/head";
 
+
+
+export const metadata = {
+  title: "Gett Funded | Fast & Flexible Funding Solutions",
+  description: "Start your funding application today and get approved quickly. Flexible business and personal loan options available.",
+};
+
+
 const Page = () => {
   // w-5/6
   return (
