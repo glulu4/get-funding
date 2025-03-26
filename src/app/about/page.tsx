@@ -1,40 +1,44 @@
-import { Footer } from "@/components/Footer";
+'use client'
+import {useState} from 'react'
+import Hero from '@/components/about/Hero'
+import Timeline from '@/components/about/Timeline'
+import CoreValues from '@/components/about/CoreValues'
+import Review from '@/components/about/Review'
+import Content from '@/components/about/Content'
+import Apply from '@/components/Apply'
 
-import Markdown from "react-markdown";
+export default function Page() {
 
-const content = `# About Me
-
-![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/db7abbe3-aa5c-433e-a16d-cbf137d1c9e5.png/public)
-
-Hey there! I'm Samantha, a 28-year-old former corporate warrior who decided to ditch the 9-to-5 grind and embark on an adventure of a lifetime. After years of hustling in a high-pressure job, I realized that life is too short to be stuck in an office, staring at spreadsheets all day.
-
-So I took a leap of faith, quit my cushy job in Singapore, and decided to see the world on my own terms. No more stuffy meetings or rigid schedules – just me, my backpack, and an open road ahead.
-
-![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/6b080e65-2329-4a36-ad5c-0a6af8d9aeb1.png/public)
-
-This blog is where I'll be documenting my travels, sharing my experiences, and hopefully inspiring others to follow their wanderlust. From trekking through remote villages to savoring local cuisines, I'm on a mission to immerse myself in different cultures and create memories that will last a lifetime.
-
-But this journey isn't just about checking off destinations from a bucket list. It's about self-discovery, personal growth, and finding the courage to live life on my own terms. I'll be honest and raw, sharing the highs and lows, the moments of pure bliss and the inevitable challenges that come with solo travel.
-
-So join me on this adventure, and let's explore the world together! Who knows, maybe my stories will inspire you to take that leap of faith and pursue your own dreams, whatever they may be.
-
-Let's go on an adventure!
-
-Love,
-
-Samantha`;
-
-
-
-const Page = async () => {
   return (
-    <div className="container mx-auto px-5">
-      <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
-        <Markdown>{content}</Markdown>
-      </div>
-      <Footer />
-    </div>
-  );
-};
+    <div className="">
 
-export default Page;
+
+      <main className=" space-y-24">
+        {/* Hero section */}
+
+        <Hero
+        title='Get to know Gett Funded'
+        description='Learn more about our mission, values, and how we’re making funding accessible to everyone.'
+        imageSrc='/images/about.png'
+          // imageSrc="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
+          imageAlt='Gett Funded team'
+
+        />
+
+
+<Content/>
+
+
+      <CoreValues/>
+
+      {/* <Review/> */}
+        {/* Timeline section */}
+        <Timeline/>
+
+        {/* Content section */}
+
+      <Apply/>
+      </main>
+    </div>
+  )
+}

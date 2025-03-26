@@ -20,7 +20,7 @@ interface MenuItem {
 }
 const menuItems: MenuItem[] = [
   { name: "Home", href: "/" },
-  // { name: "About", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Apply Now", href: "" },
 ];
 export const Navigation: FunctionComponent = () => {
