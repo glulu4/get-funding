@@ -1,24 +1,26 @@
+
 // "use client"
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Inria_Serif, Inter, Mulish } from "next/font/google";
+import {cn} from "@/lib/utils";
+import type {Metadata} from "next";
+import {Inria_Serif, Inter, Mulish} from "next/font/google";
 import "./globals.css";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import Providers from "@/components/theme-provider";
 // const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const fontSans = Mulish({ 
-  weight: ["200", "300" ,"400" ,"500" ,"600" ,"700" ,"800" ,"900" ,"1000" ],
-  subsets: ["latin"], 
-  variable: "--font-sans" });
+const fontSans = Mulish({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
+  subsets: ["latin"],
+  variable: "--font-sans"
+});
 
 
-  const fontSerif = Inria_Serif({
-    weight: ["300", "400", "700"],
-    subsets: ["latin"],
-    variable: "--font-serif",
-  })
+const fontSerif = Inria_Serif({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+})
 
 
 export const metadata = {
@@ -126,6 +128,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16919707289"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16919707289');
+          `,
+        }} />
         {/* GOOGLE TAG MANAGER - HEAD */}
         <script
           dangerouslySetInnerHTML={{
@@ -140,7 +153,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased m-auto",
@@ -163,12 +176,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* <FormProvider> */}
-            <main>
-              <Header />
+          <main>
+            <Header />
 
-              {children}
-              <Footer />
-            </main>
+            {children}
+            <Footer />
+          </main>
           {/* </FormProvider> */}
 
         </Providers>
