@@ -127,7 +127,7 @@ export default function MultiStepForm() {
     };
 
     return (
-        <div className="relative w-5/6 mx-auto">
+        <div className="relative w-5/6 mx-auto ">
             <FormProgress />
 
             <AnimatePresence mode="wait">

@@ -5,7 +5,7 @@ import FormProvider from "@/context/form-context";
 
 export default function Page() {
   return (
-    <div className='pt-10 md:pt-16'>
+    <div className='pt-10 md:pt-16 min-h-screen '>
       
       <FormProvider>
         <MultiStepForm />

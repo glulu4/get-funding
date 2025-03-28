@@ -20,7 +20,10 @@ interface MenuItem {
 }
 const menuItems: MenuItem[] = [
   { name: "Home", href: "/" },
+  {name: "Contact", href: "/contact"},
+
   { name: "About", href: "/about" },
+
   { name: "Apply Now", href: "" },
 ];
 export const Navigation: FunctionComponent = () => {
@@ -37,8 +40,8 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-primaryGreen text-primaryGreenDark font-semibold text-xl",
-                pathname === item.href && "font-bold",
+                "hover:text-primaryGreen text-primaryGreen font-semibold text-xl",
+                pathname === item.href && "font-bold text-primaryGreenDark",
               )}
             >
               {item.name === "Apply Now" ? (
@@ -63,7 +66,7 @@ export const Navigation: FunctionComponent = () => {
           <SheetTrigger>
             <Menu size="24" />
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="pt-12">
             <SheetHeader>
               <SheetDescription>
                 {menuItems.map((item) => (
@@ -72,8 +75,9 @@ export const Navigation: FunctionComponent = () => {
                     href={item.href}
                     target={item.openInNewTab ? "_blank" : "_self"}
                     className={cn(
+                      "text-primaryGreen text-xl font-semibold my-2",
                       "block py-2",
-                      pathname === item.href && "font-semibold"
+                      pathname === item.href && "font-bold text-primaryGreenDark"
                     )}
                   >
                     {item.name}
