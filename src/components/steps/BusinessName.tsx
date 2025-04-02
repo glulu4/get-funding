@@ -15,6 +15,12 @@ export default function BusinessName({nextFn, backFn}: StepProps) {
 
     const {dispatch} = useForm();
     const handleNext = () => {
+
+        // Check if name is empty
+        if (!name.trim()) {
+            alert("Please enter your business name.");
+            return;
+        }
         dispatch({
             type: "UPDATE_FIELD",
             field: "businessName",

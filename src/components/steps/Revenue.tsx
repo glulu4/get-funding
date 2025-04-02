@@ -28,6 +28,8 @@ export default function Revenue({nextFn, backFn}: StepProps) {
             field: "annualRevenue",
             value: annualRevenue,
         });
+
+        
         nextFn();
     }
 

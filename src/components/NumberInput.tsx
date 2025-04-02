@@ -24,16 +24,32 @@ export default function NumberInput({label, value, setValue, prefix, errorOccure
         setValue(formattedValue);
     };
 
+    // const formatNumber = (num: string) => {
+
+    //     if (label === "Annual Revenue") {
+
+            
+    //         const nfObject = new Intl.NumberFormat("en-US");
+    //         // Convert to number, handle empty string as 0
+    //         const numericValue = num === "" ? 0 : Number(num.replace(/,/g, ""));
+    //         return nfObject.format(numericValue).toString();
+
+    //     }
+    // };
+
+
     const formatNumber = (num: string) => {
-
         if (label === "Annual Revenue") {
-            const nfObject = new Intl.NumberFormat("en-US");
-            // Convert to number, handle empty string as 0
-            const numericValue = num === "" ? 0 : Number(num.replace(/,/g, ""));
-            return nfObject.format(numericValue).toString();
+            if (!num) return ""; // 👈 Fix: show nothing if input is empty
 
+            const nfObject = new Intl.NumberFormat("en-US");
+            const numericValue = Number(num.replace(/,/g, ""));
+            return nfObject.format(numericValue);
         }
+
+        return num;
     };
+
     
     
     const showError = errorOccured && !hasTyped;    
