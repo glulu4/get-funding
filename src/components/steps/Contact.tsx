@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
-import RadioSelect from '../RadioSelect';
 import {StepProps} from '../MuliStep';
-import ButtonNav from '../ButtonNav';
 import Question from '../ui/Question';
-import NumberInput from '../NumberInput';
 import TextInput from '../TextInput';
 import {useForm} from '@/context/form-context';
-import {FormState} from '@/reducers/form-reducer';
-import {useRouter} from 'next/navigation';
 
 // STEP 1
 export default function Contact({nextFn, backFn}: StepProps) {
@@ -20,43 +15,7 @@ export default function Contact({nextFn, backFn}: StepProps) {
     const [phone, setPhone] = useState("");
 
 
-    const {state, dispatch} = useForm();
-
-    const router = useRouter();
-
-    const handleSubmit = async () => {
-
-        // setLoading(true);
-        const formData:FormState = {
-
-            ...state,
-            lastName:lname,
-            firstName:fname,
-            email,
-            phone   
-        }
-        try {
-            const response = await fetch("/api/sendInfo", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({formData}),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Something went wrong");
-            }
-
-            router.push('/complete')
-        } catch (error) {
-            alert(error instanceof Error ? error.message : "Failed to send message");
-        } finally {
-
-        }
-    };
+    const {dispatch} = useForm();
 
 
     const handleNext = async () => {
@@ -69,10 +28,7 @@ export default function Contact({nextFn, backFn}: StepProps) {
                 phone
             }
         })
-        dispatch({type:"CLEAR_STATE"})
-
-        await handleSubmit();
-        // nextFn();
+        nextFn();
     }
 
     const handleBack = () => {

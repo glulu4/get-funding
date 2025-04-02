@@ -8,7 +8,7 @@ export default function IPhoneImage() {
                 src="/images/iphone-content.PNG"
                 alt="App preview displayed on an iPhone screen"
                 fill
-                className="object-cover rounded-[30px]"
+                className="object-cover rounded-[30px] p-2"
                 priority
             />
 

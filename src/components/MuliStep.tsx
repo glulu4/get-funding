@@ -75,9 +75,10 @@ import Zipcode from "./steps/Zipcode";
 import BusinessName from "./steps/BusinessName";
 import Contact from "./steps/Contact";
 import FormProgress from "./FormProgress";
+import Sign from "./steps/Sign";
 
 const steps = [BusinessType, Money, Purpose,
-     BusinessStart, Revenue, CreditScore, Industry, Zipcode, BusinessName, Contact];
+    BusinessStart, Revenue, CreditScore, Industry, Zipcode, BusinessName, Contact, Sign];
 
 
 export type StepProps = {
