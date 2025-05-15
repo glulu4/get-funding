@@ -92,7 +92,7 @@ export default function Sign({nextFn, backFn}: StepProps) {
 
             router.push("/complete");
         } catch (error) {
-            alert(error instanceof Error ? error.message : "An error occurred.");
+            alert(error instanceof Error ? error : "An error occurred.");
         }
 
     };
