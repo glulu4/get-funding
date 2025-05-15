@@ -7,6 +7,8 @@ import "./globals.css";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import Providers from "@/components/theme-provider";
+import toast, {Toaster} from 'react-hot-toast';
+
 // const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const fontSans = Mulish({
@@ -129,8 +131,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
 
-        {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16919707289"></script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16919707289"></script>
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -139,7 +140,6 @@ export default function RootLayout({
             gtag('config', 'AW-16919707289');
           `,
         }} />
-        {/* GOOGLE TAG MANAGER - HEAD */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -151,7 +151,7 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-PZ969433');
             `,
           }}
-        />
+        /> */}
       </head>
 
       <body
@@ -162,12 +162,12 @@ export default function RootLayout({
         )}
       >
         <noscript
-          dangerouslySetInnerHTML={{
-            __html: `
-              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ969433"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-            `,
-          }}
+          // dangerouslySetInnerHTML={{
+          //   __html: `
+          //     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ969433"
+          //     height="0" width="0" style="display:none;visibility:hidden"></iframe>
+          //   `,
+          // }}
         />
         <Providers
           attribute="class"
@@ -183,7 +183,7 @@ export default function RootLayout({
             <Footer />
           </main>
           {/* </FormProvider> */}
-
+          <Toaster/>
         </Providers>
       </body>
     </html>

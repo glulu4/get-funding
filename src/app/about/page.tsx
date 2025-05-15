@@ -17,7 +17,7 @@ export default function Page() {
         {/* Hero section */}
 
         <Hero
-        title='Get to know Gett Funded'
+        title='Get to know Business Name'
         description='Learn more about our mission, values, and how we’re making funding accessible to everyone.'
         imageSrc='/images/about.png'
           // imageSrc="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"

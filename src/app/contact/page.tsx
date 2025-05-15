@@ -4,6 +4,7 @@ import TextInput from '@/components/TextInput';
 import clsx from 'clsx';
 import React, {useState} from 'react';
 import Confetti from 'react-confetti-boom';
+import toast from 'react-hot-toast';
 
 export type MyFormData = {
     name: string;
@@ -23,6 +24,19 @@ export default function Page() {
 
 
     const handleSubmit = async () => {
+
+
+        toast('This has been disabled',
+            {
+                icon: '🚫',
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            }
+          );
+        return;
         // Reset success state and mark as loading
         setSuccess(false);
         setIsLoading(true);

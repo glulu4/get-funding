@@ -7,6 +7,7 @@ import {StepProps} from '../MuliStep';
 import {FormState} from '@/reducers/form-reducer';
 import {useRouter} from 'next/navigation';
 import SignatureConsentForm from '../SignatureConsentForm';
+import toast from 'react-hot-toast';
 
 export default function Sign({nextFn, backFn}: StepProps) {
 
@@ -20,6 +21,20 @@ export default function Sign({nextFn, backFn}: StepProps) {
     const [agreed, setAgreed] = useState(false);
 
     const handleSubmit = async () => {
+
+
+
+        toast('This has been disabled',
+            {
+                icon: '🚫',
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            }
+        );
+        return;
         if (!agreed || !name.trim()) {
             alert("Please enter your full name and check the agreement box.");
             return;
