@@ -46,29 +46,27 @@ export default function SignatureConsentForm({
     By signing below, 
     each of the above listed 
     business and business owner/officer 
-    (individually and collectively, “you”)
-     authorize (${businessName}, LLC) 
-     and each of its representatives, successors, 
-     assigns and designees (“Recipients”) that may be 
-     involved with or acquire commercial loans having 
-     daily repayment features or purchases of future 
-     receivables including Merchant Cash Advance transactions, 
-     including without limitation the application therefor 
-     (collectively, “Transactions”) to obtain consumer and/or personal, 
-     business and investigative reports and other information about you, 
-     including credit card processor statements and bank statements, 
-     from one or more consumer reporting agencies, such as TransUnion, 
-     Experian and Equifax, and from other credit bureaus, banks, creditors and other third parties.
+    (individually and collectively, “you”) 
+    authorize the Company and each of its 
+    representatives, successors, assigns, and designees (“Recipients”) 
+    that may be involved with or acquire commercial loans with daily 
+    repayment features or purchases of future receivables, including 
+    Merchant Cash Advance transactions (collectively, “Transactions”), 
+    to obtain consumer and/or personal, business, and investigative reports 
+    and other relevant information about you — including but not limited to 
+    credit card processor statements and bank statements — from one or more 
+    consumer reporting agencies (e.g., TransUnion, Experian, Equifax), 
+    banks, creditors, or other third parties.
     `
 
     const para2 = `
-    You also authorize (${businessName}, LLC) to 
-    transmit this application form, with any of the foregoing 
-    information obtained in connection with this application, 
-    to any or all of the Recipients for the foregoing purposes. 
-    You also consent to the release, by any creditor or financial institution, 
-    of any information relating to any of you, to (${businessName}, LLC) and to each of the Recipients, on its own behalf.
+    You also authorize the Company to transmit this application form, 
+    along with any information obtained in connection with it, to any or all 
+    Recipients for the purposes outlined above. Additionally, you consent 
+    to the release of relevant information by any financial institution or creditor 
+    to the Company and its Recipients.
     `
+    
 
     const para3 = `
                         I am providing my cellphone number and hereby consent to the receipt of text messages knowing that msg. and data rates may apply. I understand that consent to receive texts is not a condition of approval. I can expect approx. 10 msgs/month. We certify that all the information contained herein is complete, true and accurate.
