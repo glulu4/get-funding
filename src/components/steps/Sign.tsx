@@ -35,6 +35,7 @@ export default function Sign({nextFn, backFn}: StepProps) {
             }
         );
         return;
+        
         if (!agreed || !name.trim()) {
             alert("Please enter your full name and check the agreement box.");
             return;
