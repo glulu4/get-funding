@@ -76,7 +76,7 @@ export default function CoreValues() {
                 Our Core Values
             </h2>
             <p className="mt-4 text-center text-xl text-white max-w-3xl mx-auto">
-                At Gett Funded, we put our values into action every day. They guide our decisions and shape our interactions with clients, partners, and each other.
+                At Company X, we put our values into action every day. They guide our decisions and shape our interactions with clients, partners, and each other.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {values.map((value, index) => (

@@ -29,7 +29,7 @@ export default function Content() {
                         Empowering Financial Freedom, One Loan at a Time
                     </h2>
                     <p className="mt-6 text-lg sm:text-2xl text-gray-600">
-                        At Gett Funded, we understand that financial opportunities don’t wait. Our mission is to provide fast, flexible, and accessible funding solutions that help you seize the moment.
+                        At Company X, we understand that financial opportunities don’t wait. Our mission is to provide fast, flexible, and accessible funding solutions that help you seize the moment.
                     </p>
                 </div>
 
@@ -51,7 +51,7 @@ export default function Content() {
                     <blockquote className="text-2xl font-semibold text-primaryGreenDark">
                         “We’re not just lending money. We’re investing in your potential, your dreams, and your future.”
                     </blockquote>
-                    <p className="mt-6 text-gray-500 italic text-lg">— The Gett Funded Team</p>
+                    <p className="mt-6 text-gray-500 italic text-lg">— The Company X Team</p>
                 </div>
             </div>
         </div>
