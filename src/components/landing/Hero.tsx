@@ -111,6 +111,7 @@ import {Container} from "@/components/Container";
 import IPhoneImage from "./IPhoneImage";
 import MyButton from "../ui/MyButton";
 import {ChevronRightIcon, Link} from "lucide-react";
+import {config} from "@/config";
 
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<"div">) {
     let id = useId();
@@ -194,7 +195,7 @@ export function Hero() {
                         Fast & Flexible Funding
                     </h2>
                     <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white font-serif">
-                        Gett Funded
+                       {config.name.name}
                     </h1>
                     <p className="mt-6 text-lg text-white">
                         Get the funding you need—fast. We provide all types of business and personal funding solutions with quick approval and expert support.
